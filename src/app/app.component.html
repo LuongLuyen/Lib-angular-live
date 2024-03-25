@@ -1,60 +1,20 @@
 <h1>Button</h1>
-<div class="a">
-    <div [innerHTML]="ButtonW"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button1"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button2"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button3"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button4"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button5"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button6"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button7"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button8"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button9"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button10"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button11"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button12"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button13"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button14"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button15"></div>
-</div>
-<div class="a">
-    <div [innerHTML]="Button16"></div>
+<div *ngFor="let button of buttons">
+    <div class="a">
+        <div [innerHTML]="button.name"></div>
+    </div>
 </div>
 
 <h1>Componet Search</h1>
- <div class="a">
-    <div [innerHTML]="ComponentSearch"></div>
+<div *ngFor="let search of componentSearchs">
+    <div class="a">
+        <div [innerHTML]="search.name"></div>
+    </div>
 </div>
-<div class="a">
-    <div [innerHTML]="ComponentSearch1"></div>
+
+<h1>Card</h1>
+<div *ngFor="let card of cards">
+    <div class="b">
+        <div [innerHTML]="card.name"></div>
+    </div>
 </div>

@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Bar</title>
+  <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <button>
-        🔎
-    </button>
-    <div class="luyen-w">
-        <input id="luyenSearch" onchange="handleChange()" class="luyen-inputs" style="border: solid 1px #333;" type="search" placeholder="Tìm kiếm..." />
-        <button onclick="handleClick()" class="luyen-btns">🔎</button>    
+    <div class="container">
+        <div class="card">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h3>
+                        Hello there!
+                    </h3>
+                    <p>Trust yourself and keep going.</p>
+                </div>
+            </div>
         </div>
-        <script>
-        var input = ''
-        function handleChange() {
-            var inputValue = document.getElementById("luyenSearch").value;
-            return inputValue
-        }
-        const sendData= async()=>{
-            if(input!== ''){
-                try {
-                    await axios.post('http://localhost:5000/home-bong', {input})
-                    document.getElementById("luyenSearch").value=""
-                } catch (error) {
-                    alert("Api không hoạt động")
-                }
-            }else{
-                alert("Vui lòng nhập nội dung tìm kiếm")
-            }
-        }
-        function handleClick(){
-            input = handleChange()
-            sendData()
-        }
-        </script>
-</div> 
+    </div>
+
 </body>
 </html>
