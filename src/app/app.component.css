@@ -1,0 +1,9 @@
+.a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: solid 1px #7d7c7c;
+    margin: 5px;
+    border-radius: 10px;
+}
