@@ -1,8 +1,34 @@
 <h1>Button</h1>
-<div *ngFor="let button of buttons">
-    <div class="a">
-        <div [innerHTML]="button.name"></div>
-    </div>
+<p>Cách dùng</p>
+<div>Install: npm i luongluyen</div>
+<h3>Config:</h3>
+<div>
+    angular.json: "styles": [ "node_modules/luongluyen/index.css" ],
+</div>
+<div>index.html: (script) src=https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js (/script)</div>
+<br/>
+<h3>Format: ButtonW(Tên nút:string)</h3>
+<br/>
+<h3>app.component.ts</h3>
+<div>import {{"{"}} DomSanitizer {{"}"}} from '{{"@angular"}}/platform-browser';</div>
+<div>import {{"{"}} ButtonW {{"}"}} from 'luongluyen/lib/btn';</div>
+<div>import 'luongluyen/index.css';</div>
+<br/>
+<div>export class AppComponent {{"{"}}</div>
+<div>  constructor(private sanitizer: DomSanitizer) {{"{ }"}}</div>
+<div>ButtonW: any;</div>
+<div> ngOnInit() {{"{"}}</div>
+    <div>this.ButtonW = this.sanitizer.bypassSecurityTrustHtml(ButtonW("Tên nút"));</div>
+ <div>{{"}"}}</div>
+ <div>{{"}"}}</div>
+<br/>
+<h3>app.component.html</h3>
+<div>(div [innerHTML]="ButtonW")(/div)</div>
+<h3>layout: header:10vh content: 80vh footer:10vh </h3>
+
+
+<div class="a" *ngFor="let button of buttons">
+    <div [innerHTML]="button.name"></div>
 </div>
 
 <h1>Componet Search</h1>
@@ -15,6 +41,8 @@
 <h1>Card</h1>
 <div *ngFor="let card of cards">
     <div class="b">
-        <div [innerHTML]="card.name"></div>
+        <div style="height: 10vh; background-color: #fff; border-radius: 10px;">header</div>
+        <div style="height: 80vh;" [innerHTML]="card.name"></div>
+        <div style="height: 10vh; background-color: #fff; border-radius: 10px;">footer</div>
     </div>
 </div>

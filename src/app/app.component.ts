@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonW,Button1,Button2,Button3,Button4,Button5,Button6,Button7,Button8,Button9,Button10,Button11,Button12,Button13,Button14,Button15,Button16} from 'luongluyen/lib/btn'
 import {ComponentSearch,ComponentSearch1,ComponentSearch2,ComponentSearch3} from 'luongluyen/lib/search'
-import {Card1} from 'luongluyen/lib/card'
+import {Card1,Card2,Card3} from 'luongluyen/lib/card'
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import 'luongluyen/index.css';
@@ -43,9 +43,21 @@ export class AppComponent {
     {name:ComponentSearch2,template:ComponentSearch2(this.api)},
     {name:ComponentSearch3,template:ComponentSearch3(this.api)},
   ]
+   data:object={
+    id:"2",
+    name:"Áo nam",
+    named:"Thời trang nam",
+    description:"Áo thun .áo phông tay lỡ form rộng chất cotton dày đẹp mẫu tổng hợp",
+    price :"399.000 đ",
+    colors:`["blue","red","green","orange","black"]`,// ["blue","red","green","orange","black","white","yellow","pink","beige","brown","gray","purple"]
+    sizes :`["7","8","9","10","11"]`//1->100
+}
   cards:any[]=[
     {name:Card1,template:Card1("")},
+    {name:Card2,template:Card2("")},
+    {name:Card3,template:Card3(this.data)},
   ]
+  test:any;
 
   ngOnInit() {
     this.buttons.forEach((button:any)=>{
@@ -57,5 +69,8 @@ export class AppComponent {
     this.cards.forEach((card:any)=>{
       card.name =this.sanitizer.bypassSecurityTrustHtml(card.template)
     })
+    this.test=this.sanitizer.bypassSecurityTrustHtml(
+      ''
+    )
   }
 }
