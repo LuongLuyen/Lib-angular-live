@@ -43,22 +43,23 @@ export class AppComponent {
     {name:ComponentSearch2,template:ComponentSearch2(this.api)},
     {name:ComponentSearch3,template:ComponentSearch3(this.api)},
   ]
-   data:object={
+   data:any={
     id:"2",
-    name:"Áo nam",
+    name:"Áo nam WOOPS",
     named:"Thời trang nam",
-    description:"Áo thun .áo phông tay lỡ form rộng chất cotton dày đẹp mẫu tổng hợp",
+    description:"Áo thun tay lỡ form rộng unisex WOOPS, Áo phông nam nữ form rộng ATL14.",
     price :"399.000 đ",
-    colors:`["blue","red","green","orange","black"]`,// ["blue","red","green","orange","black","white","yellow","pink","beige","brown","gray","purple"]
-    sizes :`["7","8","9","10","11"]`//1->100
+    colors:["blue","red","green","orange","black"],// ["blue","red","green","orange","black","white","yellow","pink","beige","brown","gray","purple"]
+    img:"png",// định dạng file img và tên trùng với color
+    sizes :[">7<",">8<",">9<",">1<0",">11<"]//1->100
 }
   cards:any[]=[
     {name:Card1,template:Card1("")},
     {name:Card2,template:Card2("")},
-    {name:Card3,template:Card3(this.data)},
+    {name:Card3,template:Card3(this.data,this.api)},
   ]
   test:any;
-
+ 
   ngOnInit() {
     this.buttons.forEach((button:any)=>{
       button.name =this.sanitizer.bypassSecurityTrustHtml(button.template)
@@ -70,7 +71,7 @@ export class AppComponent {
       card.name =this.sanitizer.bypassSecurityTrustHtml(card.template)
     })
     this.test=this.sanitizer.bypassSecurityTrustHtml(
-      ''
+     ""
     )
   }
 }
